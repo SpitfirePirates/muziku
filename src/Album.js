@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Card, CardMedia, CardContent, Typography} from '@material-ui/core';
 
-function Album() {
-  return (
-    <div className="Album">
-      <Card>
-        <CardMedia image=""/>
-        <CardContent>
-          <Typography variant="h5" component="h2">
-            Album Title
-          </Typography>
-        </CardContent>
-      </Card>
-    </div>
-  );
+export default class Album extends Component {
+  render() {
+    return (
+      <div className="Album">
+        <Card>
+          <CardMedia image={this.props.image}/>
+          <CardContent>
+            <Typography variant="h5" component="h2">
+              {this.props.title}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 }
-
-export default Album;
