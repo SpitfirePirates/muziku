@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import {Card, CardMedia, CardContent, Typography} from '@material-ui/core';
 
 export default class Album extends Component {
+  onClick() {
+    if (this.props.onClick) {
+      this.props.onClick.call();
+    }
+  }
+
   render() {
     const album = this.props.album,
       name = album.name,
@@ -9,7 +15,7 @@ export default class Album extends Component {
       artist = album.artists[0].name;
 
     return (
-      <div className="Album">
+      <div className="Album" onClick={_=>this.onClick()}>
         <Card>
           <CardMedia image={image}/>
           <CardContent>

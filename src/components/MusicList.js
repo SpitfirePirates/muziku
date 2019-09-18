@@ -25,19 +25,27 @@ export default class MusicList extends Component {
       });
   }
 
+  onAlbumClick(album) {
+    if (this.props.onAlbumClick) {
+      this.props.onAlbumClick.call(this, album);
+    }
+  }
+
   render() {
-    const albums = this.state.albums.map(function (album) {
+    const albums = this.state.albums.map(album => {
       return (
         <Grid key={album.id} item xs={3}>
-          <Album album={album}></Album>
+          <Album id={album.id} album={album} onClick={e=>this.onAlbumClick(album)}></Album>
         </Grid>
       );
     }, []);
 
     return (
-      <Grid container spacing={2} className="MusicList">
-        {albums}
-      </Grid>
+      <div className="MusicList">
+        <Grid container spacing={2}>
+          {albums}
+        </Grid>
+      </div>
     );
   }
 }
