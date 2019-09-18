@@ -1,8 +1,18 @@
 main {
-    padding-top: 128px;
+    padding: 128px 64px 64px;
     max-width: 1400px;
     margin: 0 auto;
 }
 .Album .MuiCardMedia-root {
     padding-top: 100%;
+}
+.Album .AlbumTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Album .ArtistName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -14,7 +14,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <main>
-        <MusicList></MusicList>
+        <MusicList/>
       </main>
     </div>
   );

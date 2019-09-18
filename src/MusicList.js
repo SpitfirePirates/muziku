@@ -28,14 +28,14 @@ export default class MusicList extends Component {
   render() {
     const albums = this.state.albums.map(function (album) {
       return (
-        <Grid item xs={3}>
-          <Album title={album.name} image={album.images[0].url}></Album>
+        <Grid key={album.id} item xs={3}>
+          <Album album={album}></Album>
         </Grid>
       );
     }, []);
 
     return (
-      <Grid container className="MusicList">
+      <Grid container spacing={2} className="MusicList">
         {albums}
       </Grid>
     );
